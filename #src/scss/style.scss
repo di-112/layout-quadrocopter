@@ -1,0 +1,181 @@
+@import "./mixins.scss";
+@import "./nule.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+body, html {
+   height: 100%;
+}
+
+*{
+   font-family: 'Montserrat', sans-serif;
+}
+
+body{
+   overflow: hidden;
+}
+
+.header{
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   background: linear-gradient(to right, #eff2f6 60%, #ff343d 60%);
+   & button{
+      background: inherit;
+      color: white;
+   }
+   @media (max-width: 700px) {
+      background: #eff2f6;
+   }
+}
+
+.header__menu{
+   flex: 0 0 120px;
+   width: 100%;
+   max-width: 1500px;
+   padding: 10px 20px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   & .menu__item{
+      display: flex;
+      align-items: center;
+      & .header__logo{
+         margin-right: 30px;
+         position: relative;
+         &::after{
+            content: ' ';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            right:-10px;
+            top:-5px;
+            background: inherit;
+            border-radius: 50%;
+            border: 3px solid #ff343d;     
+            z-index: 5;
+         }
+      }
+      & .header__phone{
+         @include adaptiv-font(14,12);
+         line-height: 30px;
+         font-weight: 400;
+         color: #92a1a5;
+         display: flex;
+         align-items: center;
+         font-weight: 700;
+         & img {margin-right: 7px;}
+     }  
+      & .header__btn{
+         display: flex;
+         align-items: center;
+         position: relative;
+         z-index: 15;
+         & .btn__text{
+            margin-right: 20px;
+            text-transform: uppercase;
+            @include adaptiv-font(16,12);
+            line-height: 30px;
+            font-weight: 700;
+         }
+      }
+      @media (max-width: 700px) {
+         flex-direction: column;
+         & .header__logo{margin-bottom: 10px;}
+      }
+   }
+   @media (max-width: 700px) {
+      flex: 0 0 60px;
+      background: linear-gradient(to right, #eff2f6 60%, #ff343d 60%);
+   }
+   @media (max-width: 500px) {
+      background: linear-gradient(to right, #eff2f6 50%, #ff343d 50%);
+   }
+}
+
+.header__fullscreen{
+   flex: 1 1 auto;
+   width: 100%;
+   height: 100%;
+   padding: 0 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   & .header__content{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   & .header__info{
+       margin-right: 50px;
+       flex: 0 0 30%;
+       & .header__title{
+         @include adaptiv-font(60,25);
+         line-height: 30px;
+         font-weight: 700;
+         color: #000000;
+         margin-bottom: 50px;
+       }
+       & p{
+         @include adaptiv-font(14,12);
+         line-height: 30px;
+         font-weight: 400;
+         color: #92a1a5;
+       }
+   }
+   & .header__img{
+      position: relative;
+      & img{
+         position: relative;
+         width: 100%;
+         z-index: 2;
+      }
+      &::after{
+         content: '';
+         display: inline-block;
+         width: 60%;
+         height: 100%;
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50% , -50%);
+         background: white;
+         border-radius: 50%;
+      }
+   }
+
+   & .schrollBtn{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      @include adaptiv-font(18,12);
+      font-weight: 700;
+      color: #000000;
+      transform: rotate(-90deg) translateX(70%);
+   }
+
+   @media (max-width: 700px) {
+      & .header__content{
+      flex-direction: column;
+      height: 100%;
+         & .header__info{
+            text-align: center;
+            margin: 0 0 30px;
+            & .header__title{margin-bottom: 30px;}
+         }
+         & .header__img{
+            width: 80%;
+            margin: 0 auto;
+         }
+      }
+   }
+   @media (max-width: 500px) {
+      padding: 0 15px;
+      & .header__img{
+         width: 100%;
+      }
+   }
+}
+
+@import "./burger.scss";

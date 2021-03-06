@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+body, html {
+  height: 100%;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #eff2f6 60%, #ff343d 60%);
+}
+.header button {
+  background: inherit;
+  color: white;
+}
+@media (max-width: 700px) {
+  .header {
+    background: #eff2f6;
+  }
+}
+
+.header__menu {
+  flex: 0 0 120px;
+  width: 100%;
+  max-width: 1500px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__menu .menu__item {
+  display: flex;
+  align-items: center;
+}
+.header__menu .menu__item .header__logo {
+  margin-right: 30px;
+  position: relative;
+}
+.header__menu .menu__item .header__logo::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: -10px;
+  top: -5px;
+  background: inherit;
+  border-radius: 50%;
+  border: 3px solid #ff343d;
+  z-index: 5;
+}
+.header__menu .menu__item .header__phone {
+  font-size: calc(12px + 2 * ((100vw - 320px) / 1600));
+  line-height: 30px;
+  font-weight: 400;
+  color: #92a1a5;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+.header__menu .menu__item .header__phone img {
+  margin-right: 7px;
+}
+.header__menu .menu__item .header__btn {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 15;
+}
+.header__menu .menu__item .header__btn .btn__text {
+  margin-right: 20px;
+  text-transform: uppercase;
+  font-size: calc(12px + 4 * ((100vw - 320px) / 1600));
+  line-height: 30px;
+  font-weight: 700;
+}
+@media (max-width: 700px) {
+  .header__menu .menu__item {
+    flex-direction: column;
+  }
+  .header__menu .menu__item .header__logo {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 700px) {
+  .header__menu {
+    flex: 0 0 60px;
+    background: linear-gradient(to right, #eff2f6 60%, #ff343d 60%);
+  }
+}
+@media (max-width: 500px) {
+  .header__menu {
+    background: linear-gradient(to right, #eff2f6 50%, #ff343d 50%);
+  }
+}
+
+.header__fullscreen {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__fullscreen .header__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__fullscreen .header__info {
+  margin-right: 50px;
+  flex: 0 0 30%;
+}
+.header__fullscreen .header__info .header__title {
+  font-size: calc(25px + 35 * ((100vw - 320px) / 1600));
+  line-height: 30px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 50px;
+}
+.header__fullscreen .header__info p {
+  font-size: calc(12px + 2 * ((100vw - 320px) / 1600));
+  line-height: 30px;
+  font-weight: 400;
+  color: #92a1a5;
+}
+.header__fullscreen .header__img {
+  position: relative;
+}
+.header__fullscreen .header__img img {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+.header__fullscreen .header__img::after {
+  content: "";
+  display: inline-block;
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+}
+.header__fullscreen .schrollBtn {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: calc(12px + 6 * ((100vw - 320px) / 1600));
+  font-weight: 700;
+  color: #000000;
+  transform: rotate(-90deg) translateX(70%);
+}
+@media (max-width: 700px) {
+  .header__fullscreen .header__content {
+    flex-direction: column;
+    height: 100%;
+  }
+  .header__fullscreen .header__content .header__info {
+    text-align: center;
+    margin: 0 0 30px;
+  }
+  .header__fullscreen .header__content .header__info .header__title {
+    margin-bottom: 30px;
+  }
+  .header__fullscreen .header__content .header__img {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 500px) {
+  .header__fullscreen {
+    padding: 0 15px;
+  }
+  .header__fullscreen .header__img {
+    width: 100%;
+  }
+}
+
+.btn__burger {
+  width: 30px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+  z-index: 5;
+}
+
+.btn__burger:before,
+.btn__burger:after,
+.btn__burger span {
+  display: inline-block;
+  content: "";
+  background: #ffffff;
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  transition: all 0.5s ease 0s;
+  left: 0;
+}
+
+.btn__burger span {
+  top: 9px;
+}
+
+.btn__burger:before {
+  top: 0;
+}
+
+.btn__burger:after {
+  bottom: 0;
+}
+
+.mobileList {
+  display: none;
+  position: absolute;
+  right: -100%;
+  top: 0;
+  z-index: 5;
+  transition: all 0.5s ease 0s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  max-width: 300px;
+  overflow: auto;
+  height: 100%;
+  background: rgba(128, 128, 128, 0.726);
+  padding: 20px 0;
+  text-align: center;
+}
+.mobileList .list__item {
+  margin-bottom: 20px;
+}
+.mobileList .list__item:last-child {
+  margin-bottom: 0;
+}
+.mobileList .list__item a {
+  color: white;
+  font-size: 20px;
+  display: inline-block;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+.mobileList .list__item a::first-letter {
+  text-transform: uppercase;
+}
+@media (max-width: 500px) {
+  .mobileList {
+    width: 50%;
+  }
+}
+
+.mobileList.active {
+  right: 0;
+}
