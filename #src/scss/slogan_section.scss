@@ -1,0 +1,104 @@
+.slogan{
+   width: 100%;
+   & .flex{
+      display: flex;
+   }
+   & .flex__item.flex:nth-child(1){
+      flex: 0 0 30%;
+      background: url("../../img/dron_section_slogan.png") center/cover no-repeat;
+      height: 600px;
+      display: flex;
+      padding: 20px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   & .title{
+      @include adaptiv-font(60,25);
+      line-height: 60px;
+      font-weight: 700;
+      color: #000000;
+   }
+   & .item__text{
+      font-size: 14px;
+      line-height: 30px;
+      font-weight: 400;
+      color: #92a1a5;
+   }
+   & .flex__item:nth-child(2){
+      flex: 1 1 auto;
+      background: url('../../img/back_section_slogan.png') 0 0 / cover no-repeat;
+      & .flex__item:nth-child(1){
+         flex: 0 0 50%;
+         background: rgba(0, 0, 0, 0.5);
+         padding: 0 40px;
+         display: flex;
+         align-items: center;
+         justify-content: flex-end;
+         & .title{
+            color: white;
+            text-align: right;
+         }
+      }
+      & .flex__item:nth-child(2){
+         position: relative;
+         flex: 0 0 50%;
+         overflow:hidden;
+         & .item__btn{
+            background-color: #ffffff;
+            border-radius: 28.5px;
+            @include adaptiv-font(18,14);
+            font-weight: 700;
+            color: #000000;
+            text-transform: uppercase;
+            padding: 20px 30px;
+            transform: rotate(-90deg);
+            position: absolute;
+            right: 10%;
+            bottom: 30%;
+            &::before{
+               content: " ";
+               position: absolute;
+               left: -80%;
+               bottom: 50%;
+               display: inline-block;
+               width: 70%;
+               height: 1px;
+               padding: 0;
+               background: white;
+               
+            }
+         }
+      }
+   }
+   @media (max-width: 1200px) {
+      &>.flex{
+         flex-direction: column;
+         &>.flex__item:nth-child(1){
+            flex: 0 0 500px;
+         }
+         &>.flex__item:nth-child(2){
+            flex: 0 0 500px;
+            flex-direction: column;
+            &>.flex__item{
+               flex: 0 0 250px;
+               & .item__btn{
+                  transform: none;
+                  &:before{
+                     display: none;
+                  }
+               }
+            }
+         }
+      }
+   }
+   @media (max-width: 500px) {
+      &>.flex{
+         flex-direction: column;
+         &>.flex__item:nth-child(1){
+            flex: 0 0 250px;
+         }
+      }
+   }
+
+}
