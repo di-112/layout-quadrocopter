@@ -2,10 +2,15 @@
    position: fixed;
    width: 95%;
    min-height: 95%;
+   max-width: 1300px;
+   max-height: 700px;
    left: 50%;
    top: 50%;
    transform: translate(-50%, -50%);
-   background: rgba(0, 0, 0, 0.8);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: rgba(0, 0, 0, 0.85);
    z-index: 20;
    border: 5px solid rgb(82, 78, 78);
    overflow: auto;
@@ -15,8 +20,9 @@
    color: white;
    font-weight: 500;
    @include adaptiv-font(20,16);
+   transition: all 0.8s ease;
    opacity: 0;
-   display: none;
+   visibility: hidden;
 }
 
 .popup__close{
@@ -43,9 +49,7 @@
 }
 
 .popup.active{
-   display: flex;
-   justify-content: center;
-   align-items: center;
    opacity: 1;
+   visibility: visible;
 }
 

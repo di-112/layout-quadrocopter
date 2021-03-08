@@ -33,13 +33,10 @@
 .mobileList{
 	display: none;
 	position: absolute;
-	right: -100%;
 	top: 0;
+	right: 0; 
 	z-index: 5;
 	transition: all 0.5s ease 0s;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	width: 40%;
 	max-width: 300px;
 	overflow: auto;
@@ -67,5 +64,18 @@
 }
 
 .mobileList.active{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: move 1s ease ;
 	right: 0;
+}
+
+@keyframes move{
+	0%{
+		right: -100%;
+	}
+	100%{
+		right: 0;
+	}
 }

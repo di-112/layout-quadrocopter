@@ -452,13 +452,10 @@ body.lock {
 .mobileList {
   display: none;
   position: absolute;
-  right: -100%;
   top: 0;
+  right: 0;
   z-index: 5;
   transition: all 0.5s ease 0s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 40%;
   max-width: 300px;
   overflow: auto;
@@ -491,9 +488,21 @@ body.lock {
 }
 
 .mobileList.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: move 1s ease;
   right: 0;
 }
 
+@keyframes move {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
 .slogan {
   width: 100%;
 }
@@ -799,10 +808,15 @@ body.lock {
   position: fixed;
   width: 95%;
   min-height: 95%;
+  max-width: 1300px;
+  max-height: 700px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.85);
   z-index: 20;
   border: 5px solid #524e4e;
   overflow: auto;
@@ -812,8 +826,9 @@ body.lock {
   color: white;
   font-weight: 500;
   font-size: calc(16px + 4 * ((100vw - 320px) / 1600));
+  transition: all 0.8s ease;
   opacity: 0;
-  display: none;
+  visibility: hidden;
 }
 
 .popup__close {
@@ -840,8 +855,6 @@ body.lock {
 }
 
 .popup.active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   opacity: 1;
+  visibility: visible;
 }

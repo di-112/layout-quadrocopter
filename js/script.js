@@ -6,6 +6,12 @@ if(burgerMenu)burgerMenu.addEventListener('click', (e)=>{
    menuList.classList.toggle('active')
 })
 
+document.addEventListener('mousedown', function(e){
+   if(e.target.closest('.mobileList') === null && e.target.closest('.header__btn') === null ){
+      menuList.classList.remove('active')
+   }
+});
+
 const viewMore = document.querySelectorAll(".view__more, .products")
 const popupClose = document.querySelector(".popup__close")
 const popup = document.querySelector(".popup")
@@ -24,3 +30,10 @@ if(popupClose)popupClose.addEventListener('click', (e)=>{
    popup.classList.remove('active')
    body.classList.remove('lock')
 })
+
+document.addEventListener('mousedown', function(e){
+    if(e.target.closest('.popup') === null){
+      popup.classList.remove('active')
+      body.classList.remove('lock')
+    }
+});
