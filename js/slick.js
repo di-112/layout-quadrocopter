@@ -5,11 +5,14 @@ $('.slider').slick(
    dots:true,
    slidesToShow: 1,
    slidesToScroll: 1,
-   speed: 500,
-   vertical: true,
+   speed: 0,
    draggable: false,
    autoplay: true,
-   autoplaySpeed: 5000,
+   autoplaySpeed: 4000,
+   adaptiveHeight: true,
+   verticalSwiping: true,
+   pauseOnDotsHover: true,
+   pauseOnHover: true
  }
 ) 
 })

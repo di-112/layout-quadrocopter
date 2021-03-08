@@ -55,8 +55,10 @@
 			font-size: 20px;
 			display: inline-block;
 			letter-spacing: 1.5px;
-			&::first-letter{text-transform: uppercase;}
 			font-weight: 700;
+			text-transform: uppercase;
+			&:hover{color: black}
+
 		}
 	}
 	@media (max-width: 500px) {

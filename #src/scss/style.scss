@@ -14,9 +14,14 @@ body{
    overflow-x: hidden;
 }
 
+body.lock{
+   overflow: hidden;
+}
+
 @import "./header.scss";
 @import "./slogan_section.scss";
 @import "./features_section.scss";
 @import "./generation_section.scss";
 @import "./journey_section.scss";
 @import "./footer.scss";
+@import "./popup.scss";
