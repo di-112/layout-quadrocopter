@@ -276,7 +276,7 @@ body.lock {
   justify-content: center;
   align-items: center;
 }
-.header__fullscreen .schrollBtn {
+.header__fullscreen .scrollBtn {
   position: absolute;
   left: 0;
   bottom: 0;
